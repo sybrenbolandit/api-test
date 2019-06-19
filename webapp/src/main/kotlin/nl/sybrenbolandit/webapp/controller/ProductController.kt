@@ -22,11 +22,4 @@ class ProductController(val productRepository: ProductRepository) {
     fun findProduct(@NotBlank barcode: String): Maybe<Product> {
         return productRepository.fetchProduct(barcode)
     }
-
-    @Error(global = true)
-    fun error(request: HttpRequest<Any>, e: Throwable): HttpResponse<JsonError> =
-            when (e) {
-                is MongoWriteException -> HttpResponse.badRequest(JsonError("Object with this key already exists"))
-                else -> HttpResponse.status(HttpStatus.SERVICE_UNAVAILABLE)
-            }
 }

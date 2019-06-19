@@ -3,7 +3,7 @@ micronaut:
         name: veganscan-api
 
 mongodb:
-    uri: mongodb://api_test_user:nasf983wfnw3finoesinc@ds139167.mlab.com:39167
+    uri: mongodb://testuser:nasf983wfnw3finoesinc@ds139167.mlab.com:39167
 
 vegandb:
     database:
